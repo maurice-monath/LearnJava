@@ -10,12 +10,18 @@ public class Charging {
   public static void main(String[] args) {
     int costPerKwh = 50;
     int costPerMinute = 30;
+    int costPerCharge;
+    int completeCost = 0;
 
-
-    System.out.println(costPerKwh * 50 + costPerMinute * 60);
-    System.out.println(costPerKwh * 70 + costPerMinute * 90);
-    System.out.println(costPerKwh * 55 + costPerMinute * 70);
-    System.out.println(
-        (costPerKwh * 50 + costPerMinute * 60) + (50 * 70 + 30 * 90) + (50 * 55 + 30 * 70));
+    costPerCharge = costPerKwh * 50 + costPerMinute * 60;
+    System.out.println(costPerCharge);
+    completeCost = completeCost + costPerCharge;
+    costPerCharge = costPerKwh * 70 + costPerMinute * 90;
+    System.out.println(costPerCharge);
+    completeCost = completeCost + costPerCharge;
+    costPerCharge = costPerKwh * 55 + costPerMinute * 70;
+    System.out.println(costPerCharge);
+    completeCost = completeCost + costPerCharge;
+    System.out.println(completeCost);
   }
 }
