@@ -23,10 +23,11 @@ public class ElectricityBill2 {
     // Calculate total cost for Tariff 2
     float totalTariff2 = (yearlyConsumption * rateTariff2) / 100 + monthlyTariff2 * 12;
 
+    float cheapest = totalTariff1 < totalTariff2
+                     ? totalTariff1
+                     : totalTariff2;
     // Determine the minimum between total costs and round the result
-    return totalTariff1 < totalTariff2
-           ? totalTariff1
-           : totalTariff2;
+    return (int) ((cheapest * 100) + 0.5f) / 100.0F;
   }
 
   /**
@@ -38,10 +39,9 @@ public class ElectricityBill2 {
     float rateTariff1 = 33.26f;
     float monthlyTariff2 = 19.53f;
     float rateTariff2 = 30.17f;
-
-    float result = (int)
+    float result =
         (((invoiceAmount(yearlyConsumption, monthlyTariff1, rateTariff1, monthlyTariff2,
-            rateTariff2)) * 100) + 0.5) / 100.0F;
+            rateTariff2))));
 
     System.out.println(result);
   }
